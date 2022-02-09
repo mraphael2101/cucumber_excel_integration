@@ -18,9 +18,7 @@ public class MyStepDfn {
 	@When("^The User performs some action using the data from \"([^\"]*)\"$")
 	public void the_user_performs_some_action_using_the_data_from(@Transform(ExcelDataToDataTable.class) DataTable table) throws Throwable {
 		System.out.println(table.toString());
-		
 		List<String> dataList = table.asList(String.class);
-		
 		for(String str : dataList){
 			System.out.println(str);
 		}
